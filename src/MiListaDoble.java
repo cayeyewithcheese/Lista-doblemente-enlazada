@@ -24,7 +24,10 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public Object getHead() {
-        return null;
+        if(head == null) {
+            return null;
+        }
+        return head.dato;
     }
 
     @Override

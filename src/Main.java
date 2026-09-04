@@ -7,8 +7,9 @@ public class Main {
         lista.add(20.0);
         lista.add(30.0);
         lista.add(40.0);
-        System.out.println("Elementos agregados.");
-        System.out.println("Tamaño: " + lista.getSize());
+
+        
+        System.out.println("Cabeza: " + lista.getHead());
 
 
     }
