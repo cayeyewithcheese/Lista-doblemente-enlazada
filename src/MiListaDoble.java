@@ -43,7 +43,10 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public Object get(DoubleNode node) {
-        return null;
+        if (node == null) {
+
+        }
+        return node.dato;
     }
 
     @Override
