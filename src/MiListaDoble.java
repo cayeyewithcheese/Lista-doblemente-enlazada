@@ -4,6 +4,9 @@ public class MiListaDoble implements ListInterface{
     private DoubleNode tail;
     private int size;
 
+
+
+
     @Override
     public boolean isEmpty() {
         return size == 0;
@@ -32,7 +35,10 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public Object getTail() {
+        if ( tail == null) {
         return null;
+        }
+        return tail.dato;
     }
 
     @Override
@@ -47,8 +53,21 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public boolean add(Object object) {
-        return false;
+        DoubleNode nuevo = new DoubleNode(object);
+        if (head == null) {
+            head = nuevo;
+            tail = nuevo;
+        } else {
+            nuevo.anterior = tail;
+            tail.siguiente = nuevo;
+            tail = nuevo;
+
+        }
+        size++;
+        return true;
+
     }
+
 
     @Override
     public boolean insert(DoubleNode node, Object object) {
