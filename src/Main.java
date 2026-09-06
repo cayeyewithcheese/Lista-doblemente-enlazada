@@ -8,10 +8,13 @@ public class Main {
 
         DoubleNode nodo = lista.search(20);
 
-        if (nodo != null) {
-            System.out.println(nodo.dato);
-        } else {
-            System.out.println("No encontrado");
+        lista.insert(nodo, 15);
+
+        DoubleNode actual = lista.search(10);
+
+        while (actual != null) {
+            System.out.print(actual.dato + " ");
+            actual = actual.siguiente;
         }
     }
 }
