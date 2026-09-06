@@ -2,7 +2,16 @@ public class Main {
     public static void main(String[] args){
         MiListaDoble lista = new MiListaDoble();
 
-       DoubleNode nodo = new DoubleNode(20);
-        System.out.println("Dato del nodo: " + lista.get(nodo));
+        lista.add(10);
+        lista.add(20);
+        lista.add(30);
+
+        DoubleNode nodo = lista.search(20);
+
+        if (nodo != null) {
+            System.out.println(nodo.dato);
+        } else {
+            System.out.println("No encontrado");
+        }
     }
 }

@@ -51,6 +51,15 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public DoubleNode search(Object object) {
+        DoubleNode actual = head;
+
+        while (actual != null) {
+            if (actual.dato.equals(object)) {
+                return actual;
+            }
+            actual = actual.siguiente;
+        }
+
         return null;
     }
 
