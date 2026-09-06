@@ -6,7 +6,10 @@ public class Main {
         lista.add(20);
         lista.add(30);
 
-        System.out.println(lista.contains(20));
-        System.out.println(lista.contains(50));
+        Object[] array = lista.toArray();
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }

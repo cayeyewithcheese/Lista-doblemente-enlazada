@@ -227,7 +227,19 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+
+        Object[] array = new Object[size];
+
+        DoubleNode actual = head;
+        int i = 0;
+
+        while (actual != null) {
+            array[i] = actual.dato;
+            i++;
+            actual = actual.siguiente;
+        }
+
+        return array;
     }
 
     @Override
