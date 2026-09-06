@@ -217,6 +217,11 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public boolean contains(Object object) {
+
+        if (search(object) != null) {
+            return true;
+        }
+
         return false;
     }
 
