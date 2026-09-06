@@ -7,9 +7,9 @@ public class Main {
         lista.add(40);
         lista.add(20);
 
-        MiListaDoble listaOrdenada = lista.sortList();
+        MiListaDoble ordenada = lista.sortList();
 
-        Object[] arreglo = listaOrdenada.toArray();
+        Object[] arreglo = ordenada.toArray();
 
         for (int i = 0; i < arreglo.length; i++) {
             System.out.print(arreglo[i] + " ");

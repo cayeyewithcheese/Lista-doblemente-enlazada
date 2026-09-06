@@ -286,29 +286,27 @@ public class MiListaDoble implements ListInterface {
 
     @Override
     public MiListaDoble sortList() {
-        Object[] array = toArray();
+        MiListaDoble nueva = new MiListaDoble();
 
-        for (int i = 0; i < array.length - 1; i++) {
+        Object[] arreglo = toArray();
 
-            for (int j = 0; j < array.length - 1 - i; j++) {
+        for (int i = 0; i < arreglo.length - 1; i++) {
 
-                Integer a = (Integer) array[j];
-                Integer b = (Integer) array[j + 1];
+            for (int j = 0; j < arreglo.length - 1 - i; j++) {
 
-                if (a > b) {
-                    Object temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                if ((Integer) arreglo[j] > (Integer) arreglo[j + 1]) {
+
+                    Object aux = arreglo[j];
+                    arreglo[j] = arreglo[j + 1];
+                    arreglo[j + 1] = aux;
                 }
             }
         }
 
-        MiListaDoble nuevaLista = new MiListaDoble();
-
-        for (Object elemento : array) {
-            nuevaLista.add(elemento);
+        for (int i = 0; i < arreglo.length; i++) {
+            nueva.add(arreglo[i]);
         }
 
-        return nuevaLista;
+        return nueva;
     }
 }
