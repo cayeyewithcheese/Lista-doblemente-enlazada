@@ -183,7 +183,36 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public boolean remove(DoubleNode node) {
-        return false;
+        if (node == null) {
+            return false;
+        }
+
+        if (node == head) {
+            head = head.siguiente;
+
+            if (head != null) {
+                head.anterior = null;
+            } else {
+                tail = null;
+            }
+        }
+        else if (node == tail) {
+            tail = tail.anterior;
+
+            if (tail != null) {
+                tail.siguiente = null;
+            } else {
+                head = null;
+            }
+        }
+        else {
+            node.anterior.siguiente = node.siguiente;
+            node.siguiente.anterior = node.anterior;
+        }
+
+        size--;
+
+        return true;
     }
 
     @Override

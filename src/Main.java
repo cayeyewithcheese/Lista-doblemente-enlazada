@@ -8,7 +8,7 @@ public class Main {
 
         DoubleNode nodo = lista.search(20);
 
-        lista.set(nodo, 25);
+        lista.remove(nodo);
 
         DoubleNode actual = lista.search(10);
 
@@ -16,5 +16,7 @@ public class Main {
             System.out.print(actual.dato + " ");
             actual = actual.siguiente;
         }
+
+        System.out.println("Tamaño: " + lista.getSize());
     }
 }
