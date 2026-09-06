@@ -172,7 +172,13 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public boolean set(DoubleNode node, Object object) {
-        return false;
+        if (node == null) {
+            return false;
+        }
+
+        node.dato = object;
+
+        return true;
     }
 
     @Override

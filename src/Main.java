@@ -6,7 +6,9 @@ public class Main {
         lista.add(20);
         lista.add(30);
 
-        lista.insertTail(40);
+        DoubleNode nodo = lista.search(20);
+
+        lista.set(nodo, 25);
 
         DoubleNode actual = lista.search(10);
 
