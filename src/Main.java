@@ -6,10 +6,12 @@ public class Main {
         lista.add(20);
         lista.add(30);
 
-        Object[] array = lista.toArray();
+        Object[] arreglo = new Object[3];
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        arreglo = lista.toArray(arreglo);
+
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + " ");
         }
     }
 }
