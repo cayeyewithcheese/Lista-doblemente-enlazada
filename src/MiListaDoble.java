@@ -266,7 +266,26 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public MiListaDoble subList(DoubleNode from, DoubleNode to) {
-        return null;
+        MiListaDoble nuevaLista = new MiListaDoble();
+
+        if (from == null || to == null) {
+            return nuevaLista;
+        }
+
+        DoubleNode actual = from;
+
+        while (actual != null) {
+
+            nuevaLista.add(actual.dato);
+
+            if (actual == to) {
+                break;
+            }
+
+            actual = actual.siguiente;
+        }
+
+        return nuevaLista;
     }
 
     @Override
