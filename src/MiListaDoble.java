@@ -1,10 +1,8 @@
-public class MiListaDoble implements ListInterface{
+public class MiListaDoble implements ListInterface {
 
     private DoubleNode head;
     private DoubleNode tail;
     private int size;
-
-
 
 
     @Override
@@ -27,7 +25,7 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public Object getHead() {
-        if(head == null) {
+        if (head == null) {
             return null;
         }
         return head.dato;
@@ -35,8 +33,8 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public Object getTail() {
-        if ( tail == null) {
-        return null;
+        if (tail == null) {
+            return null;
         }
         return tail.dato;
     }
@@ -195,8 +193,7 @@ public class MiListaDoble implements ListInterface{
             } else {
                 tail = null;
             }
-        }
-        else if (node == tail) {
+        } else if (node == tail) {
             tail = tail.anterior;
 
             if (tail != null) {
@@ -204,8 +201,7 @@ public class MiListaDoble implements ListInterface{
             } else {
                 head = null;
             }
-        }
-        else {
+        } else {
             node.anterior.siguiente = node.siguiente;
             node.siguiente.anterior = node.anterior;
         }
@@ -290,7 +286,29 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public MiListaDoble sortList() {
-        return null;
-    }
+        Object[] array = toArray();
 
+        for (int i = 0; i < array.length - 1; i++) {
+
+            for (int j = 0; j < array.length - 1 - i; j++) {
+
+                Integer a = (Integer) array[j];
+                Integer b = (Integer) array[j + 1];
+
+                if (a > b) {
+                    Object temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+
+        MiListaDoble nuevaLista = new MiListaDoble();
+
+        for (Object elemento : array) {
+            nuevaLista.add(elemento);
+        }
+
+        return nuevaLista;
+    }
 }
