@@ -135,7 +135,20 @@ public class MiListaDoble implements ListInterface{
 
     @Override
     public boolean insertHead(Object object) {
-        return false;
+        DoubleNode nuevo = new DoubleNode(object);
+
+        if (head == null) {
+            head = nuevo;
+            tail = nuevo;
+        } else {
+            nuevo.siguiente = head;
+            head.anterior = nuevo;
+            head = nuevo;
+        }
+
+        size++;
+
+        return true;
     }
 
     @Override
